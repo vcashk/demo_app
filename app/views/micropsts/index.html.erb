@@ -1,0 +1,25 @@
+<h1>Listing micropsts</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @micropsts.each do |micropst| %>
+  <tr>
+    <td><%= micropst.content %></td>
+    <td><%= micropst.user_id %></td>
+    <td><%= link_to 'Show', micropst %></td>
+    <td><%= link_to 'Edit', edit_micropst_path(micropst) %></td>
+    <td><%= link_to 'Destroy', micropst, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Micropst', new_micropst_path %>

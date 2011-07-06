@@ -1,0 +1,25 @@
+<%= form_for(@micropst) do |f| %>
+  <% if @micropst.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@micropst.errors.count, "error") %> prohibited this micropst from being saved:</h2>
+
+      <ul>
+      <% @micropst.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_field :content %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
